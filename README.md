@@ -10,3 +10,6 @@ https://docs.intersystems.com/iris20192/csp/docbook/Doc.View.cls?KEY=BJSNAT_glob
 - change from a directly triggered client to a server design  
 - put the result into a separate docker image as example for a MicroService / MicroServer  
 - add a simple interface in IRIS to control the MicroService execution.  
+
+
+__NOTICE: ALL SCRIPTS ARE FOR LINUX ONLY !__
