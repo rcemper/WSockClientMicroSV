@@ -1,21 +1,21 @@
 
 Instead of a utility you call directly on you IRIS host you now send a work-packages  
 to the MicroService as would typically do with System Interoperability (aka.ENSEMBLE):  
-of course you have the option to more than one WebSocket Server.  
-Once the WebSocket Client Service has done it's job you get back the result from it.  
+of course you have the option of more than one WebSocket Server.  
+Once the WebSocket Client Service has done its job you get back the result from it.  
 
-The advantage over the built in WebSocket Client is, that all Network, Security,   
+The advantage over the built-in WebSocket Client is, that all Network, Security,   
 Firewall issues are kept away from the core data server. Not to talk about the  
 experience and quality Node.js has in this arena.  
 
 The demo uses wss://echo.websocket.org/ as default EchoServer  
-Next you enter some line of text.  
-At any point you can add "Lorem Ipsum" text for more content beween your own text.  
+Next you enter some lines of text.  
+At any point you can add "Lorem Ipsum" text for more content between your own text.  
 Next you sent it to the service and wait for the echo.  
 There is also the option to change your text before sending   
 as Exit the control program or Stop the service.
 
-All this processing runs asynchronous.   
+All this processing runs asynchronously.   
 Instead of waiting for completion the Listener displays periodically  
 what was received from echo so far.  
 
@@ -24,18 +24,17 @@ To __install__ it you need a
 - docker image for the WebSocket MicroServer (rcemper/rcc:demoJS)  
 - WSockClientMicroSV.tar.gz  from Open Exchange or here to make use of  
   IRIS-Docker-micro-Durability https://github.com/rcemper/IRIS-Docker-micro-Durability  
-- check directory demo: set to rwx (chmod 777) as Docker Image is a nobody  
+- check directory demo: set protection to rwx (chmod 777) as Docker Image is a nobody at your level 
 
-To __run__ it start IRIS first  (either -d or -it to observe the bahaviour) __from directory demo__ (!)   
+To __run__ it start IRIS first  (either -d or -it to observe the behaviour) __from directory demo__ (!)   
 
     docker run --name iris1 --init --rm -d \   
     -p 52773:52773 -p 51773:51773 \   
-    -v $(pwd)/demo:/external \   
+    -v $(pwd):/external \   
     intersystems/iris-community:2020.2.0.199.0 \   
     -b /external/pre.copy   
 
-next  the MicroServer  
-as you started it -it you see  
+next start the MicroServer   
 
     docker run --name rcc1 --init -it --rm \  
     rcemper/rcc:demoJS \  
@@ -43,7 +42,7 @@ as you started it -it you see
     /rcc/nodejs/WSockIris.js \  
     $(hostname -I)  
 
-as you started it -it you see  
+as you started it with __-it__ you see  
 
     platform = linux: ubuntu  
 
@@ -56,7 +55,7 @@ as you started it -it you see
         *** wait 3sec for request ***  
         *** wait 3sec for request ***  
 
-then the control application in a new linux terminal  
+then the control application in a new Linux terminal  
 
     docker exec -it iris1 iris session iris ZSocket  
 
