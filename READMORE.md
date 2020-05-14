@@ -111,3 +111,4 @@ and  on MicroService
     *** wait 3sec for request ***
 
 
+__NOTICE: ALL SCRIPTS ARE FOR LINUX ONLY !__
