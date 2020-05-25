@@ -21,7 +21,15 @@ what was received from echo so far.
 
 To __install__ it you need a  
 - docker image for IRIS ( intersystems/iris-community:2020.2.0.199.0 )  
-- docker image for the WebSocket MicroServer (rcemper/rcc:demoJS)  
+- docker image for the WebSocket MicroServer (rcemper/rcc:demoJS)
+- ################ _alternative variant since 2020-05-25 ################  
+   just run this docker command for __init__
+
+        docker run --name ini1 --init -it --rm \
+          -privileged -v $(pwd):/external \
+          rcemper/rcc:demoJS bash /rcc/init.sh   
+    
+- ################ _the inital advise is still valid_ ################
 - WSockClientMicroSV.tar.gz  from Open Exchange or here to make use of  
   IRIS-Docker-micro-Durability https://github.com/rcemper/IRIS-Docker-micro-Durability  
 - check directory demo: set protection to rwx (chmod 777) as Docker Image is a nobody at your level 
