@@ -18,4 +18,4 @@ https://docs.intersystems.com/iris20192/csp/docbook/Doc.View.cls?KEY=BJSNAT_glob
 - add a simple interface in IRIS to control the MicroService execution.  
 
 
-__NOTICE: ALL SCRIPTS ARE FOR LINUX ONLY !__
+__NOTICE: ALL SCRIPTS ARE TESTED FOR LINUX ONLY !__
