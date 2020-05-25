@@ -4,6 +4,9 @@ Docker based Micro Server as WebSocket Client
 A comapct All-IN-1 version is now available here:  
 https://openexchange.intersystems.com/package/IRIS-NativeAPI-Nodejs-compact
 
+I have added a simplified docker based initialization.  
+See https://github.com/rcemper/WSockClientMicroSV/blob/master/READMORE.md   
+
 This demo is a redesign of the WebSocket Client based on Node.js existing already for Caché.
 The major changes:  
 - use of the new IRIS Native API for Node.js   
