@@ -120,4 +120,4 @@ and  on MicroService
 _Late warning. always check the version of your image!   
 I just fell into  intersystems/iris-community:2020.2.0.__204__.0_   
 
-__NOTICE: ALL SCRIPTS ARE FOR LINUX ONLY !__
+__NOTICE: ALL SCRIPTS ARE TESTED FOR LINUX ONLY !__
