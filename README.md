@@ -18,4 +18,8 @@ https://docs.intersystems.com/iris20192/csp/docbook/Doc.View.cls?KEY=BJSNAT_glob
 - add a simple interface in IRIS to control the MicroService execution.  
 
 
-__NOTICE: ALL SCRIPTS ARE TESTED FOR LINUX ONLY !__
+- NOTICE: ALL SCRIPTS ARE TESTED FOR LINUX ONLY !
+
+May 26, 2020 - rcc   
+There are enhaced scripts suitable & tested for Linux & Windows available here   
+https://github.com/rcemper/WSockClientMicroSV/blob/master/READMEwindows.MD
