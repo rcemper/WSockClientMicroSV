@@ -1,4 +1,4 @@
-This addendum is mainly required to run dthe demo on  
+This addendum is mainly required to run the demo on  
 Docker Desktop for Windows. 
 - I failed to use continuation lines.
 - In Linux you can get the host's IP-Address by $(hostname -I)
@@ -25,7 +25,7 @@ _Start NodeJS service container_
 in Linux thsi works insimilar way    
  __docker run --name rcc1 --init -it --rm rcemper/rcc:demoJS /usr/bin/node /rcc/nodejs/WSockIris.js $(hostname -I)__
 
-_Start control program for IRIS in a new command session_  
+_Start control program for IRIS in a new command / terminal session_  
 - __docker exec -it iris1 iris session iris ZSocket__
 
 Enjoy the data going forward and return
