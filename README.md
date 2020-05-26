@@ -21,5 +21,5 @@ https://docs.intersystems.com/iris20192/csp/docbook/Doc.View.cls?KEY=BJSNAT_glob
 - NOTICE: ALL SCRIPTS ARE TESTED FOR LINUX ONLY !
 
 May 26, 2020 - rcc   
-There are enhaced scripts suitable & tested for Linux & Windows available here   
+There are enhanced scripts suitable & tested for Linux & Windows available here   
 https://github.com/rcemper/WSockClientMicroSV/blob/master/READMEwindows.MD
