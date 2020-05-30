@@ -1,92 +1,41 @@
-# native-api-contest-template
-This is a template for for an InterSystems IRIS Native API Contest.  The Native API provides fast and easy access to globals and objectscript from your application.
-
-Provided in this template is a docker file to get you started and sample programs in each supported language (Java, .Net, Node, and Python).  The sample program demonstrates basic usage of the native API.  
-
-## Getting started documentation
-
-InterSystems has a number of documents on the Native API, including code examples. The[Introduction to the Native API](https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=BJAVNAT_intro) is a good place to start.
-
-## Contest Overview
-
-The Native API contest seeks to find novel uses of the Native API to solve problems that are difficult to solve with SQL.  Solve any sort of problem that you find interesting.  You may build any sort of application so long as the build and run instructions are clear in your readme file.
-
-## Instructions
-
-You should provide a repository where docker-compose can be used to build a container image that contains Intersystems IRIS and any setup you need for your application. 
-You should include instructions for running your application within the docker image. 
-
-Sample programs are contained in this repository to make it easier to get started.
-* [Java](https://github.com/intersystems-community/native-api-contest-template/blob/master/src/java/README.md)
-* [Python](https://github.com/intersystems-community/native-api-contest-template/blob/master/src/python/README.md)
-* [.NET Core](https://github.com/intersystems-community/native-api-contest-template/blob/master/src/dotnet/README.md)
-* [NodeJS](https://github.com/intersystems-community/native-api-contest-template/blob/master/src/nodejs/README.md)
-
-Each of the included examples can be built and executed in the container by running `./run.sh` from their respective directories.
-
-
-# Template Contest Submissions
-
 ## Inspiration
-To make an easy template to start building apps using the IRIS native API
+Using the IRIS native API for Node.JS was the oportunity to present a MicroService operating in a Docker container.
 
 ## What it does
-Please take some time to explain what your application does, now it uses the IRIS native API, and what makes it awesome.
+A WebSocketClient Service runs in an own container checking for messages to be submitted using IRIS native API for Node.JS.  
+The service operates with 3 globals (Run/Stop, WSserver), Input, Output.  
+All information is provide in IRIS
+To visiualize oparation the containr runs inteactive.
+Control / Iput /output is all managed from a utiltiy in Iris   
 
 ## Challenges I ran into
-no challenges
+- run a vanilla IRIS distribution out of the box __without docker-compose__
+- adapt NodeJS interface from Caché into new IRIS native API. 
 
 ## Accomplishments that I proud of
-Easy template with self documented API spec installed with one ZPM command or docker-compose build
+no need for ZPM or docker-compose. A single docker container does it all.
+run the same image on nativ Docker (Linux) and Docker Desktop for Windows, (had no acces to MAC)
 
 ## What I learned
-a lot!
+Handling and running more than 1 Docker container in cooperation.  
 
 ## Built with
-Using VSCode and ObjectScript plugin, IRIS Community Edition in Docker, ZPM, IRIS openapi API
-
+IRIS Community Edition in Docker, IRIS openapi API, NodeJs, Docker utiltiy functions
 
 ## Installation with Docker
 
 ## Prerequisites
-Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
+Make sure you have native Docker od Docker Desktop installed. Pull and inti the demo
+- __docker pull store/intersystems/iris-community:2020.2.0.204.0__
+- __docker pull rcemper/rcc:demoJS__  
+- __docker run --name ini1 --init -it --rm --privileged -v vol1:/external rcemper/rcc:demoJS bash /rcc/init.sh a docker__  
 
-
-Clone/git pull the repo into any local directory e.g. like it is shown below:
-
-```
-$ git clone https://github.com/intersystems-community/native-api-contest-template
-```
-
-Open the terminal in this directory and run:
-
-```
-$ docker-compose up -d --build
-```
+Detailed description: https://github.com/rcemper/WSockClientMicroSV/blob/master/READMEwindows.MD
 
 ## How to Work With it
+Run first a docker exec session for the control / in-out utiltiy   
+__docker run --name iris1 --init --rm -d -p 52773:52773 -p 51773:51773 -v vol1:/external store/intersystems/iris-community:2020.2.0.204.0 -b /external/pre.copy__  
+Next start the Service process  
+__docker run --name rcc1 --init -it --rm rcemper/rcc:demoJS /usr/bin/node /rcc/nodejs/WSockIris.js 172.17.0.2__  
 
-Start a bash shell to the container and execute `run.sh`
-
-
-## Troubleshooting Docker-Compose
-
-If docker-compose fails, the two most common problems are:
-
-1. Docker version mismatch.  The docker-compose specifies version 3.6. If you have a different version, you should be able to just change the version in `docker-compose.yml`
-2. Port unavailable.  If you're already running a container on your machine, you might need to change the port number that is exported.
-
-## How to start coding
-This is a template, so you can use a template button on Github to create your own copy of this repository.
-The repository is ready to code in VSCode with ObjectScript plugin.
-Install [VSCode](https://code.visualstudio.com/) and [ObjectScript](https://marketplace.visualstudio.com/items?itemName=daimor.vscode-objectscript) plugin and open the folder in VSCode.
-Once you start IRIS container VSCode connects to it and you can edit, compile and debug ObjectScript code.
-Open /src/cls/PackageSample/ObjectScript.cls class and try to make changes - it will be compiled in running IRIS docker container.
-
-Feel free to delete PackageSample folder and place your ObjectScript classes in a form
-/src/cls/Package/Classname.cls
-
-The script in Installer.cls will import everything you place under /src/cls into IRIS.
-
-## Collaboration 
-Any collaboration is very welcome! Fork and send Pull requests!
+Detailed description: https://github.com/rcemper/WSockClientMicroSV/blob/master/READMEMORE.MD
