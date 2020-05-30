@@ -1,5 +1,5 @@
 # WSockClientMicroSV
-Docker based Micro Server as WebSocket Client  
+Docker based Micro Server as WebSocket Client   
 
 A compact ALL-IN-1 version is now available here:  
 https://openexchange.intersystems.com/package/IRIS-NativeAPI-Nodejs-compact
