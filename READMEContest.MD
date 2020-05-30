@@ -4,9 +4,10 @@ Using the IRIS native API for Node.JS was the oportunity to present a MicroServi
 ## What it does
 This WebSocketClient Service runs in an own container checking for messages to be submitted using IRIS native API for Node.JS.  
 The service operates with 3 Globals (Run/Stop WSserver, Input, Output)  
-All information is provided from IRIS
-To visiualize operation the containr runs interactive.
-Control / Input /output is all managed from a utiliy in Iris   
+Data are sent to an external WebSocket Echo Service and reply is passed back to IRIS.  
+All information is provided from IRIS.  
+To visiualize operation the containr runs interactive.  
+Control / Input /output is all managed from a utiliy in Iris     
 
 ## Challenges I ran into
 - run a vanilla IRIS distribution out of the box __without docker-compose__
