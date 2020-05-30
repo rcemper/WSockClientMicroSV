@@ -14,7 +14,7 @@ _To get the images:_
   for our fresh IRIS container
  
 _For initialization_ (only required once)
-- __docker run --name ini1 --init -it --rm --privileged -v vol1:/external rcemper/rcc:demoJS bash /rcc/init.sh__
+- __docker run --name ini1 --init -it --rm --privileged -v vol1:/external rcemper/rcc:demoJS bash /rcc/init.sh__  
   a docker volume "vol1" is created and loaded
 
 _Start IRIS server first !_
