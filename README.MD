@@ -16,7 +16,7 @@ Control / Input / Output is all managed from a interactive utility in IRIS.
 ## Accomplishments that I proud of
 - No need for ZPM or docker-compose.  
 - A single docker container does it all.  
-- Run the same image on nativ Docker (Linux) and Docker Desktop for Windows,
+- Run the same image on native Docker (Linux) and Docker Desktop for Windows,
   (had no acces to MAC)  
 - Build an All-in-1 image with Sevice and IRIS in a common container.  
   https://openexchange.intersystems.com/package/IRIS-NativeAPI-Nodejs-compact
@@ -49,4 +49,4 @@ __docker run --name iris1 --init --rm -d -p 52773:52773 -p 51773:51773 -v vol1:/
 Next start the Service process   
 __docker run --name rcc1 --init -it --rm rcemper/rcc:demoJS /usr/bin/node /rcc/nodejs/WSockIris.js 172.17.0.2__   
 
-Detailed description: https://github.com/rcemper/WSockClientMicroSV/blob/master/READMEMORE.MD  
+Detailed description: https://github.com/rcemper/WSockClientMicroSV/blob/master/READMORE.MD  
