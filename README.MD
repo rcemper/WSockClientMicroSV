@@ -52,4 +52,4 @@ __docker run --name rcc1 --init -it --rm rcemper/rcc:demoJS /usr/bin/node /rcc/n
 And start the control program for IRIS in a new command / terminal session   
 __docker exec -it iris1 iris session iris ZSocket__
 
-Detailed description: https://github.com/rcemper/WSockClientMicroSV/blob/master/READMORE.MD  
+Detailed description: https://github.com/rcemper/WSockClientMicroSV/blob/master/READMORE.md
