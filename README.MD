@@ -47,6 +47,9 @@ Run first a Docker exec session for the Control / In-Out utility in IRIS
 __docker run --name iris1 --init --rm -d -p 52773:52773 -p 51773:51773 -v vol1:/external store/intersystems/iris-community:2020.2.0.204.0 -b /external/pre.copy__  
 
 Next start the Service process   
-__docker run --name rcc1 --init -it --rm rcemper/rcc:demoJS /usr/bin/node /rcc/nodejs/WSockIris.js 172.17.0.2__   
+__docker run --name rcc1 --init -it --rm rcemper/rcc:demoJS /usr/bin/node /rcc/nodejs/WSockIris.js 172.17.0.2__ 
+
+Amd start the control program for IRIS in a new command / terminal session
+__docker exec -it iris1 iris session iris ZSocket__
 
 Detailed description: https://github.com/rcemper/WSockClientMicroSV/blob/master/READMORE.MD  
