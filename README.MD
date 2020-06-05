@@ -1,5 +1,7 @@
 ## Inspiration
 Using the IRIS native API for Node.JS was the oportunity to present a MicroService operating in a Docker container.  
+___My demo video is now also available to watch the demo in operation.__   
+https://youtu.be/dSV-0RJ5Olg  
 
 ## What it does
 This WebSocketClient Service runs in an own container checking for messages to be submitted using IRIS native API for Node.JS.  
