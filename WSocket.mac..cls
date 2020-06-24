@@ -1,4 +1,4 @@
-ZSocket ; manage data for Websocket  
+ZSocket ; manage data for Websocket 
 #;	pause client
 #;	0 = Pause
 #;  1 = Process Input
