@@ -1,3 +1,8 @@
+ ~~~
+ This is a coding example working on IRIS 2020.2 
+ It will not be kept in synch with new versions      
+ It is also NOT serviced by InterSystems Support !   
+~~~ 
 ## Inspiration
 Using the IRIS native API for Node.JS was the oportunity to present a MicroService operating in a Docker container.  
 ___My demo video is now also available to watch the demo in operation.__   
