@@ -20,7 +20,7 @@ Control / Input / Output is all managed from a interactive utility in IRIS.
 - run a vanilla IRIS distribution out of the box __without docker-compose__
 - transform interface from Caché into new IRIS native API. 
 
-## Accomplishments that I proud of
+## Accomplishments that I'm proud of
 - No need for ZPM or docker-compose.  
 - A single docker container does it all.  
 - Run the same image on native Docker (Linux) and Docker Desktop for Windows,
@@ -60,5 +60,7 @@ And start the control program for IRIS in a new command / terminal session
 __docker exec -it iris1 iris session iris ZSocket__
 
 Detailed descriptions:    
-https://github.com/rcemper/WSockClientMicroSV/blob/master/READMORE.md  
-https://github.com/rcemper/WSockClientMicroSV/blob/master/READMEwindows.MD  
+[Read more](https://github.com/rcemper/WSockClientMicroSV/blob/master/READMORE.md)    
+[Readme Windows](https://github.com/rcemper/WSockClientMicroSV/blob/master/READMEwindows.MD)  
+
+[Article in DC](https://community.intersystems.com/post/websocket-client-js-iris-native-api-docker-micro-server)
