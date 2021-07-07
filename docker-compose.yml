@@ -1,0 +1,25 @@
+version: '3.6'
+services:
+  iris:
+    init: true
+    hostname: iris
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports: 
+      - 41773:1972
+      - 42773:52773
+      - 53773
+    volumes:
+      - ./:/external
+  nodejs:
+    init: true
+    hostname: nodejs
+    build: 
+      context: ./nodejs
+      dockerfile: DockerfileJS
+    restart: always
+    volumes:
+      - ./nodejs/:/external   
+    entrypoint: ["/bin/bash","-c","/external/init.sh"]    

@@ -1,0 +1,8 @@
+// Unexpire passwords for dev mode
+zn "%SYS"
+Do ##class(Security.Users).UnExpireUserPasswords("*")
+
+zn "USER"
+do $SYSTEM.OBJ.Load("/opt/irisbuild/src/WSocket.mac","ck") 
+
+halt

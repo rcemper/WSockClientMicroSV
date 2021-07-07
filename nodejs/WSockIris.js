@@ -25,26 +25,30 @@
 //        1 => sent to echo server
 //       	^ZSocketRun(0)= echo server => "wss://echo.websocket.org/"
 //
-const irisnative = require('intersystems-iris-native')
+const irisnative = require('intersystems-iris-native') ;
 const W3CWebSocket = require('websocket').w3cwebsocket;
 
 console.log("\n\t*****************************");
-//      see if we got an IRIS host to serve
-var ip = process.argv.slice(2).toString().split(",")[0] ;
-if (ip.toString()=="") {
-	console.log("\t*** no IRIS host defined ****") ;
-	console.log("\t********* game over *********");
-	process.exit();  
-	}
-console.log("\tConnect to IRIS on: "+ip) ;
-
-var port = 51773 ;
-var namespace = "%SYS" ;
-var username = "_system" ;
+var ip = "iris" ;
+var port = 1972 ;
+console.log("\tConnect to IRIS on: "+ip+":"+port) ;
+var namespace = "USER" ;
+var username = "_SYSTEM" ;
 var password = "SYS" ;
-
+var cn = 0 ;
+var con;
 // Create connection to InterSystems IRIS
-const connection = irisnative.createConnection({host: ip, port: port, ns: namespace, user: username, pwd: password}) ;
+while (cn<1) {
+ try {
+	 con = irisnative.createConnection({host: ip, port: port, ns: namespace, user: username, pwd: password}) ;
+     cn=1;
+    }
+ catch(error) {
+	console.log("\t*** Trying to connect ***");
+	Sleep(10000) ; 
+ }		 
+}
+const connection = con ;
 console.log("Successfully connected to InterSystems IRIS.") ; 
 
 // Create an InterSystems IRIS native object
@@ -59,10 +63,13 @@ var exit = false;
 var echoserver = "?" ;
 var run=0;
 
+
+
+
+
 function getrun() {
 	run=irisNative.get("ZSocketRun");
 	if (run<0) { 
-var namespace = "%SYS" ;
 		try { client.close() } 
 		catch(e) {}
 		finale();
